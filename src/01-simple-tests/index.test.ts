@@ -30,7 +30,12 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should divide two numbers', () => {
-    // Write your test here
+    const result = simpleCalculator({
+      a: 6,
+      b: 2,
+      action: Action.Divide
+    });
+    expect(result).toBe(3);
   });
 
   test('should exponentiate two numbers', () => {
