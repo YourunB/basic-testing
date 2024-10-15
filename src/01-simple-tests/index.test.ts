@@ -3,17 +3,29 @@ import { simpleCalculator, Action } from './index';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
-    const calculate = simpleCalculator({ a: 2, b: 2, action: Action.Add })
+    const calculate = simpleCalculator({
+      a: 2,
+      b: 2,
+      action: Action.Add
+    })
     expect(calculate).toBe(4);
   });
 
   test('should subtract two numbers', () => {
-    const calculate = simpleCalculator({ a: 10, b: 5, action: Action.Subtract });
+    const calculate = simpleCalculator({
+      a: 10,
+      b: 5,
+      action: Action.Subtract
+    });
     expect(calculate).toBe(5);
   });
 
   test('should multiply two numbers', () => {
-    const calculate = simpleCalculator({ a: 2, b: 2, action: Action.Multiply });
+    const calculate = simpleCalculator({
+      a: 2,
+      b: 2,
+      action: Action.Multiply
+    });
     expect(calculate).toBe(4);
   });
 
