@@ -48,7 +48,12 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should return null for invalid action', () => {
-    // Write your test here
+    const invalid = simpleCalculator({
+      a: 0,
+      b: 2,
+      action: 'invalid'
+    });
+    expect(invalid).toBeNull();
   });
 
   test('should return null for invalid arguments', () => {
