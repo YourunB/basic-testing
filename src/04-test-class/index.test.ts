@@ -32,12 +32,16 @@ describe('BankAccount', () => {
     const bankAccount = getBankAccount(5000);
 
     bankAccount.deposit(2000);
-    
+
     expect(bankAccount.getBalance()).toBe(7000);
   });
 
   test('should withdraw money', () => {
-    // Write your test here
+    const bankAccount = getBankAccount(5000);
+
+    bankAccount.withdraw(2000);
+
+    expect(bankAccount.getBalance()).toBe(3000);
   });
 
   test('should transfer money', () => {
