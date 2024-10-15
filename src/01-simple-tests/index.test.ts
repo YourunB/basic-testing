@@ -57,6 +57,33 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should return null for invalid arguments', () => {
-    // Write your test here
+    const err1 = simpleCalculator({
+      a: 'error',
+      b: 10,
+      action: Action.Add
+    });
+
+    const err2 = simpleCalculator({
+      a: 10,
+      b: null,
+      action: Action.Add
+    });
+
+    const err3 = simpleCalculator({
+      a: null,
+      b: 10,
+      action: Action.Add
+    });
+
+    const err4 = simpleCalculator({
+      a: 10,
+      b: 20,
+      action: undefined
+    });
+    
+    expect(err1).toBeNull();
+    expect(err2).toBeNull();
+    expect(err3).toBeNull();
+    expect(err4).toBeNull();
   });
 });
