@@ -39,7 +39,12 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should exponentiate two numbers', () => {
-    // Write your test here
+    const exponentiate = simpleCalculator({
+      a: 4,
+      b: 4,
+      action: Action.Exponentiate
+    });
+    expect(exponentiate).toBe(256);
   });
 
   test('should return null for invalid action', () => {
