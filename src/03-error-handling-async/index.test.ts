@@ -12,7 +12,9 @@ describe('resolveValue', () => {
 
 describe('throwError', () => {
   test('should throw error with provided message', () => {
-    // Write your test here
+    const err = 'error';
+    
+    expect(() => throwError(err)).toThrow(err);
   });
 
   test('should throw error with default message if message is not provided', () => {
