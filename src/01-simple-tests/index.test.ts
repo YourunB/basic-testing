@@ -3,39 +3,39 @@ import { simpleCalculator, Action } from './index';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
-    const calculate = simpleCalculator({
+    const add = simpleCalculator({
       a: 2,
       b: 2,
       action: Action.Add
     })
-    expect(calculate).toBe(4);
+    expect(add).toBe(4);
   });
 
   test('should subtract two numbers', () => {
-    const calculate = simpleCalculator({
+    const subtract = simpleCalculator({
       a: 10,
       b: 5,
       action: Action.Subtract
     });
-    expect(calculate).toBe(5);
+    expect(subtract).toBe(5);
   });
 
   test('should multiply two numbers', () => {
-    const calculate = simpleCalculator({
+    const multiply = simpleCalculator({
       a: 2,
       b: 2,
       action: Action.Multiply
     });
-    expect(calculate).toBe(4);
+    expect(multiply).toBe(4);
   });
 
   test('should divide two numbers', () => {
-    const result = simpleCalculator({
+    const divide = simpleCalculator({
       a: 6,
       b: 2,
       action: Action.Divide
     });
-    expect(result).toBe(3);
+    expect(divide).toBe(3);
   });
 
   test('should exponentiate two numbers', () => {
