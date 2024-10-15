@@ -13,7 +13,8 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should multiply two numbers', () => {
-    // Write your test here
+    const calculate = simpleCalculator({ a: 2, b: 2, action: Action.Multiply });
+    expect(calculate).toBe(4);
   });
 
   test('should divide two numbers', () => {
