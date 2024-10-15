@@ -17,9 +17,9 @@ describe('BankAccount', () => {
 
   test('should throw error when transferring more than balance', () => {
     const bankAccount = getBankAccount(5000);
-    const bankAccountOther = getBankAccount(2000);
+    const bankAccountSecond = getBankAccount(2000);
 
-    expect(() => bankAccount.transfer(6000, bankAccountOther)).toThrow(InsufficientFundsError);
+    expect(() => bankAccount.transfer(6000, bankAccountSecond)).toThrow(InsufficientFundsError);
   });
 
   test('should throw error when transferring to the same account', () => {
@@ -55,7 +55,11 @@ describe('BankAccount', () => {
   });
 
   test('fetchBalance should return number in case if request did not failed', async () => {
-    // Write your tests here
+    const bankAccount = getBankAccount(5000);
+    const balance = await bankAccount.fetchBalance();
+    
+    expect(balance).toBeGreaterThanOrEqual(0);
+    expect(balance).toBeLessThanOrEqual(1000);
   });
 
   test('should set new balance if fetchBalance returned number', async () => {
