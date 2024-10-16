@@ -8,22 +8,24 @@ afterAll(() => jest.useRealTimers());
 jest.mock('axios', () => {
   return {
     create: () => {
-      return { get: utils.get }
+      return { get: utils.get };
     },
-  }
-})
+  };
+});
 
 describe('throttledGetDataFromApi', () => {
   afterEach(() => {
     utils.timer();
     jest.clearAllMocks();
-  })
+  });
 
   test('should create instance with provided base url', async () => {
     const axiosSpy = jest.spyOn(axios, 'create');
 
     await throttledGetDataFromApi('https://jsonplaceholder.typicode.com');
-    expect(axiosSpy).toHaveBeenCalledWith({baseURL: 'https://jsonplaceholder.typicode.com'});
+    expect(axiosSpy).toHaveBeenCalledWith({
+      baseURL: 'https://jsonplaceholder.typicode.com',
+    });
   });
 
   test('should perform request to correct provided url', async () => {
@@ -35,6 +37,8 @@ describe('throttledGetDataFromApi', () => {
   });
 
   test('should return response data', async () => {
-    expect(await throttledGetDataFromApi('https://jsonplaceholder.typicode.com')).toBe(utils.data);
+    expect(
+      await throttledGetDataFromApi('https://jsonplaceholder.typicode.com'),
+    ).toBe(utils.data);
   });
 });

@@ -10,16 +10,16 @@ describe('generateLinkedList', () => {
           value: 3,
           next: {
             value: null,
-            next: null
-          }
-        }
+            next: null,
+          },
+        },
       },
-    }
+    };
 
-    expect(generateLinkedList([1, 2, 3])).toStrictEqual(res)
+    expect(generateLinkedList([1, 2, 3])).toStrictEqual(res);
   });
 
   test('should generate linked list from values 2', () => {
-    expect(generateLinkedList(['a', 'b', 'c'])).toMatchSnapshot()
+    expect(generateLinkedList(['a', 'b', 'c'])).toMatchSnapshot();
   });
 });

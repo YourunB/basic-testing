@@ -5,8 +5,8 @@ describe('simpleCalculator tests', () => {
     const add = simpleCalculator({
       a: 2,
       b: 2,
-      action: Action.Add
-    })
+      action: Action.Add,
+    });
     expect(add).toBe(4);
   });
 
@@ -14,7 +14,7 @@ describe('simpleCalculator tests', () => {
     const subtract = simpleCalculator({
       a: 10,
       b: 5,
-      action: Action.Subtract
+      action: Action.Subtract,
     });
     expect(subtract).toBe(5);
   });
@@ -23,7 +23,7 @@ describe('simpleCalculator tests', () => {
     const multiply = simpleCalculator({
       a: 2,
       b: 2,
-      action: Action.Multiply
+      action: Action.Multiply,
     });
     expect(multiply).toBe(4);
   });
@@ -32,7 +32,7 @@ describe('simpleCalculator tests', () => {
     const divide = simpleCalculator({
       a: 6,
       b: 2,
-      action: Action.Divide
+      action: Action.Divide,
     });
     expect(divide).toBe(3);
   });
@@ -41,7 +41,7 @@ describe('simpleCalculator tests', () => {
     const exponentiate = simpleCalculator({
       a: 4,
       b: 4,
-      action: Action.Exponentiate
+      action: Action.Exponentiate,
     });
     expect(exponentiate).toBe(256);
   });
@@ -50,7 +50,7 @@ describe('simpleCalculator tests', () => {
     const invalid = simpleCalculator({
       a: 0,
       b: 2,
-      action: 'invalid'
+      action: 'invalid',
     });
     expect(invalid).toBeNull();
   });
@@ -59,27 +59,27 @@ describe('simpleCalculator tests', () => {
     const err1 = simpleCalculator({
       a: 'error',
       b: 10,
-      action: Action.Add
+      action: Action.Add,
     });
 
     const err2 = simpleCalculator({
       a: 10,
       b: null,
-      action: Action.Add
+      action: Action.Add,
     });
 
     const err3 = simpleCalculator({
       a: null,
       b: 10,
-      action: Action.Add
+      action: Action.Add,
     });
 
     const err4 = simpleCalculator({
       a: 10,
       b: 20,
-      action: undefined
+      action: undefined,
     });
-    
+
     expect(err1).toBeNull();
     expect(err2).toBeNull();
     expect(err3).toBeNull();
